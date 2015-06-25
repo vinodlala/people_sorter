@@ -127,6 +127,15 @@ describe PeopleSorter do
     FileUtils.rm(f) if File.exists?(f)
     puts File.exists?(f)
 
+    # dirname = File.dirname('./actual_files')
+    # puts 'dirname is'
+    # puts dirname
+    # puts 'File.directory?(dirname) is'
+    # puts File.directory?(dirname)
+    # unless File.directory?(dirname)
+    #   FileUtils.mkdir_p(dirname)
+    # end
+
   end }
 
 

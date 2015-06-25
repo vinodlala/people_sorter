@@ -9,11 +9,7 @@ class PeopleSorter
       output_file = File.open(output_file_name, "w")
       gender_last_name_asc_array = main_array.sort_by { |hsh| [hsh[:gender], hsh[:last_name]] }
       gender_last_name_asc_array.each do |hsh|
-        output_file.puts [hsh[:last_name],
-                          hsh[:first_name],
-                          hsh[:gender],
-                          hsh[:birth_date].strftime("%-m/%-d/%Y"),
-                          hsh[:favorite_color]].join(" ")
+        output_file.puts format_line(hsh)
       end
       output_file.close
     end
@@ -23,11 +19,7 @@ class PeopleSorter
       output_file = File.open(output_file_name, "w")
       birth_date_asc_array = main_array.sort_by { |hsh| [hsh[:birth_date], hsh[:last_name]] }
       birth_date_asc_array.each do |hsh|
-        output_file.puts [hsh[:last_name],
-                          hsh[:first_name],
-                          hsh[:gender],
-                          hsh[:birth_date].strftime("%-m/%-d/%Y"),
-                          hsh[:favorite_color]].join(" ")
+        output_file.puts format_line(hsh)
       end
       output_file.close
     end
@@ -37,11 +29,7 @@ class PeopleSorter
       output_file = File.open(output_file_name, "w")
       last_name_desc_array = main_array.sort_by { |hsh| hsh[:last_name] }.reverse
       last_name_desc_array.each do |hsh|
-        output_file.puts [hsh[:last_name],
-                          hsh[:first_name],
-                          hsh[:gender],
-                          hsh[:birth_date].strftime("%-m/%-d/%Y"),
-                          hsh[:favorite_color]].join(" ")
+        output_file.puts format_line(hsh)
       end
       output_file.close
     end
@@ -113,6 +101,14 @@ class PeopleSorter
       Date.new(date_year, date_month, date_day)
     end
 
+    def format_line(hsh)
+      [hsh[:last_name],
+       hsh[:first_name],
+       hsh[:gender],
+       hsh[:birth_date].strftime("%-m/%-d/%Y"),
+       hsh[:favorite_color]].join(" ")
+    end
+
   end
 
 end
@@ -120,19 +116,15 @@ end
 describe PeopleSorter do
 
   before (:all) do
-
-    ["./actual_files/actual_gender_asc_last_name_asc.txt",
+    ['./actual_files/actual_gender_asc_last_name_asc.txt',
      './actual_files/actual_birth_date_asc.txt',
      './actual_files/actual_last_name_desc.txt'].each do |f|
       FileUtils.rm(f) if File.exists?(f)
     end
-
     unless Dir.exist?('./actual_files/')
       FileUtils.mkdir_p('./actual_files/')
     end
-
   end
-
 
   it "should sort people by gender ascending (female then male), then by last name ascending" do
     PeopleSorter.sort_by_gender_asc_last_name_asc("./input_files", "./actual_files/actual_gender_asc_last_name_asc.txt")

@@ -127,13 +127,9 @@ describe PeopleSorter do
       FileUtils.rm(f) if File.exists?(f)
     end
 
-    # puts "Dir.exist?('./actual_files/') is"
-    # puts Dir.exist?('./actual_files/')
     unless Dir.exist?('./actual_files/')
       FileUtils.mkdir_p('./actual_files/')
     end
-    # puts "Dir.exist?('./actual_files/') is"
-    # puts Dir.exist?('./actual_files/')
 
   end
 

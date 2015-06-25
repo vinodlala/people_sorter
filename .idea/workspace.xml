@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64a04ea4-f870-4b12-b29e-785d4160b111" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pinchme_spec.rb" afterPath="$PROJECT_DIR$/pinchme_spec.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/actual_files/actual_birth_date_asc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/actual_files/actual_gender_asc_last_name_asc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/actual_files/actual_last_name_desc.txt" afterPath="" />
     </list>
     <ignored path="pinchme_code_exercise.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="pinchme_spec.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pinchme_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42902207" vertical-offset="1632" max-vertical-offset="2592">
-              <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.15141957" vertical-offset="0" max-vertical-offset="2592">
+              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -346,8 +348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pinchme_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42902207" vertical-offset="1632" max-vertical-offset="2592">
-          <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.15141957" vertical-offset="0" max-vertical-offset="2592">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
           <folding />
         </state>
       </provider>

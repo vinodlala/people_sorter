@@ -119,24 +119,23 @@ end
 
 describe PeopleSorter do
 
-  before (:all) { ['./actual_files/actual_gender_asc_last_name_asc.txt',
-                   './actual_files/actual_birth_date_asc.txt',
-                   './actual_files/actual_last_name_desc.txt'].each do |f|
-    puts f
-    puts File.exists?(f)
-    FileUtils.rm(f) if File.exists?(f)
-    puts File.exists?(f)
+  before (:all) do
 
-    # dirname = File.dirname('./actual_files')
-    # puts 'dirname is'
-    # puts dirname
-    # puts 'File.directory?(dirname) is'
-    # puts File.directory?(dirname)
-    # unless File.directory?(dirname)
-    #   FileUtils.mkdir_p(dirname)
-    # end
+    ["./actual_files/actual_gender_asc_last_name_asc.txt",
+     './actual_files/actual_birth_date_asc.txt',
+     './actual_files/actual_last_name_desc.txt'].each do |f|
+      FileUtils.rm(f) if File.exists?(f)
+    end
 
-  end }
+    # puts "Dir.exist?('./actual_files/') is"
+    # puts Dir.exist?('./actual_files/')
+    unless Dir.exist?('./actual_files/')
+      FileUtils.mkdir_p('./actual_files/')
+    end
+    # puts "Dir.exist?('./actual_files/') is"
+    # puts Dir.exist?('./actual_files/')
+
+  end
 
 
   it "should sort people by gender ascending (female then male), then by last name ascending" do

@@ -119,6 +119,17 @@ end
 
 describe PeopleSorter do
 
+  before (:all) { ['./actual_files/actual_gender_asc_last_name_asc.txt',
+                   './actual_files/actual_birth_date_asc.txt',
+                   './actual_files/actual_last_name_desc.txt'].each do |f|
+    puts f
+    puts File.exists?(f)
+    FileUtils.rm(f) if File.exists?(f)
+    puts File.exists?(f)
+
+  end }
+
+
   it "should sort people by gender ascending (female then male), then by last name ascending" do
     PeopleSorter.sort_by_gender_asc_last_name_asc("./input_files", "./actual_files/actual_gender_asc_last_name_asc.txt")
     actual_output_file = File.open("./actual_files/actual_gender_asc_last_name_asc.txt", "r")
